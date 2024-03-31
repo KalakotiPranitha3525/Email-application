@@ -1,0 +1,15 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}</h1>
+    <a href="{{ url_for('smtp_settings') }}">SMTP Settings</a><br>
+    <a href="{{ url_for('send_email') }}">Send Email</a><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

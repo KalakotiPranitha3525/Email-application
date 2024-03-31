@@ -1,0 +1,28 @@
+<!-- templates/send_email.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+</head>
+<body>
+    <h1>Send Email</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('send_email') }}" method="post">
+        <label for="recipient">Recipient:</label>
+        <input type="text" id="recipient" name="recipient" required><br>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br>
+        <label for="body">Body:</label><br>
+        <textarea id="body" name="body" rows="4" cols="50" required></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
